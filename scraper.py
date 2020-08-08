@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import schedule
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -35,7 +36,10 @@ import imaplib, email
 import pyautogui
 import subprocess
 import speech_recognition as sr
-
+import smtplib
+import config
+global subject
+global msg
 from queryAPI import bing, google, ibm
 
 
@@ -105,7 +109,7 @@ class ExpediaBot(object):
             ele = links[i]
             ele.click()
 
-        '''
+
         for d in soup.findAll('a', {'class': {'DY5T1d'}}):
             #name = d.find('h3', attrs={
                 #'class': 'truncate-lines-2 all-b-padding-half pwa-theme--grey-900 uitk-type-heading-500'})
@@ -113,7 +117,7 @@ class ExpediaBot(object):
                 #n = name.text
             names.append(d)
         return names
-        '''
+
 
 
     # scroll down gradually
@@ -865,16 +869,15 @@ def write_to_csv(names):
         #file1.write(titleString)
         #file1.write("\n")
         for i in range(0, len(names)):
-            file1.write(str(names[i].get('href')))
+            file1.write("https://news.google.com"+str(names[i].get('href')).replace('.',''))
             file1.write("\n")
 
 # main function
-if __name__ == "__main__":
+def operation():
+    old_file = 'C:\\Users\\Leon\\pycharmprojects\\NLP\\links.txt'
+    if os.path.isfile(old_file):
+        os.remove(old_file)
 
-
-
-
-    # create instance and log in
     expedia_bot = ExpediaBot()
     i = expedia_bot.login()
     while i == -1:
@@ -883,121 +886,51 @@ if __name__ == "__main__":
        time.sleep(5)
        expedia_bot = ExpediaBot()
        i = expedia_bot.login()
-    expedia_bot.searchLinks()
-    #write_to_csv(names)
+    names=expedia_bot.searchLinks()
+    write_to_csv(names)
+
+    try:
+        server = smtplib.SMTP('smtp.gmail.com:587')
+        server.ehlo()
+        server.starttls()
+        server.login(config.EMAIL_ADDRESS,config.PASSWORD)
+        message ='Subject:{}\n\n{}'.format(subject,msg)
+        server.sendmail(config.EMAIL_ADDRESS,config.EMAIL_ADDRESS,message)
+        server.quit()
+
+        print("Success")
+    except:
+        print("fail")
+
+def send_email():
+    try:
+        server = smtplib.SMTP('smtp.gmail.com:587')
+        server.ehlo()
+        server.starttls()
+        server.login(config.EMAIL_ADDRESS, config.PASSWORD)
+        message = 'Subject:{}\n\n{}'.format(subject, msg)
+        server.sendmail(config.EMAIL_ADDRESS, config.EMAIL_ADDRESS, message)
+        server.quit()
+
+        print("Success")
+    except:
+        print("fail")
 
 
+
+
+if __name__ == '__main__':
+    subject = "Daily News Update"
+    msg = "Here is your news update."
+    #schedule.every().day.at("17:30").do(operation)
+
+    send_email()
+
+
+    while(1):
+        schedule.run_pending()
+        time.sleep(1)
 
     # strategy cases
-    '''
-    if strategy == "flight":
-        for i in range(numStrategy):
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_flight("Dallas", destination, newStartDate, newEndDate)
-    elif strategy == "rental":
-        for i in range(numStrategy):
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_rental(destination, newStartDate, newEndDate)
-    elif strategy == "todo":
-        for i in range(numStrategy):
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_to_do(destination, newStartDate, newEndDate)
-    elif strategy == "bundle":
-        for i in range(numStrategy):
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_bundles("Dallas", destination, newStartDate, newEndDate)
-
-    elif strategy == "deal":
-        for i in range(numStrategy):
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_deals(destination, newStartDate, newEndDate)
-
-    elif strategy == "low":
-        budgetTest = 0
-        for i in range(numStrategy):
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_hotels(destination, newStartDate, newEndDate, budgetTest)
-
-    elif strategy == "high":
-        budgetTest = 4
-        for i in range(numStrategy):
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_hotels(destination, newStartDate, newEndDate, budgetTest)
-
-    elif strategy == "random":
-        for i in range(numStrategy):
-            budgetTest = randint(0, 4)
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_hotels_random(destination, newStartDate, newEndDate, budgetTest)
-
-    elif strategy == "low_click":
-        for i in range(numStrategy):
-            budgetTest = randint(0, 4)
-            startDay = randint(1, 9)
-            endDay = randint(20, 28)
-            newStartDate = startDate[0:3] + "0" + str(startDay) + startDate[5:]
-            newEndDate = endDate[0:3] + str(endDay) + endDate[5:]
-            expedia_bot.search_hotels_click_low(destination, newStartDate, newEndDate, budgetTest)
-
-    else:
-        print("no matching strategy found")
-    
-    # comparison with baseline
-    names_list, prices_list, urls_list, hi, li = expedia_bot.search_hotels(destination, startDate, endDate, budget)
-    while len(names_list) == 0:
-        expedia_bot.close_session()
-        del expedia_bot
-        time.sleep(15)
-        expedia_bot = ExpediaBot(email, password)
-        names_list, prices_list, urls_list, hi, li = expedia_bot.search_hotels(destination, startDate, endDate, budget)
-    title = "hotels in " + destination +  " from " + startDate +  " to " + endDate +  " with 2 travellers"
-    write_to_csv(names_list, prices_list, urls_list, str(expedia_bot.email), title, destination)
-    expedia_bot.close_session()
-
-    # baseline result
-    expedia_bot_baseline = ExpediaBot(emailBaseline, passwordBaseline)
-    ib = expedia_bot_baseline.login()
-    while ib == -1:
-        expedia_bot_baseline.close_session()
-        del expedia_bot_baseline
-        time.sleep(5)
-        expedia_bot_baseline = ExpediaBot(emailBaseline, passwordBaseline)
-        ib = expedia_bot_baseline.login()
-
-    names_list_baseline, prices_list_baseline, urls_list_baseline, hi_baseline, li_baseline = expedia_bot_baseline.search_hotels(destination, startDate, endDate, budget)
-    while len(names_list_baseline) == 0:
-        expedia_bot_baseline.close_session()
-        del expedia_bot_baseline
-        time.sleep(15)
-        expedia_bot_baseline = ExpediaBot(emailBaseline, passwordBaseline)
-        names_list_baseline, prices_list_baseline, urls_list_baseline, hi_baseline, li_baseline = expedia_bot_baseline.search_hotels(destination, startDate, endDate, budget)
-    title_baseline = "hotels in " + destination +  " from " + startDate +  " to " + endDate +  " with 2 travellers"
-    write_to_csv(names_list_baseline, prices_list_baseline, urls_list_baseline, str(expedia_bot_baseline.email), title_baseline, destination)
-    expedia_bot.close_session()
-    '''
 
 # python3 expedia_bot_chrome.py "expediabot3+18@gmail.com" "lIteRgHEWORMiTERAnDATEATUSeM" "expediabot3+19@gmail.com" "lIteRgHEWORMiTERAnDATEATUSeM" "Boston" "08/01/2020" "08/25/2020" "low_click" 2 30
