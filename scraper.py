@@ -2,49 +2,26 @@ from bs4 import BeautifulSoup
 import schedule
 
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.webdriver.common.by import By
-import re
 import time
 
 from random import seed
 from random import randint
 
 import os
-import csv
-import argparse
-
-from datetime import date
 from datetime import datetime
 
 import shadow_useragent
 
-import requests
-from lxml.html import fromstring
 
-import imaplib, email
-import pyautogui
-import subprocess
-import speech_recognition as sr
 import smtplib
 import config
 global subject
 global msg
-from queryAPI import bing, google, ibm
 
 
-global r
-r = sr.Recognizer()
 
 # setup process grab user agent profiles
 ua = shadow_useragent.ShadowUserAgent()
@@ -101,21 +78,25 @@ class ExpediaBot(object):
         html = self.driver.page_source
         soup = BeautifulSoup(html, 'lxml')
         names = []
-        urls=[]
-        links=[]
+        # urls=[]
+        # links=[]
 
-        links =self.driver.find_elements(By.CLASS_NAME,'VDXfz')
-        for i in range(5):
-            ele = links[i]
-            ele.click()
+        # links =self.driver.find_elements_by_css_selector("a[href*='article']")
+        # for i in range(5):
+        #     ele = links[i]
+        #     ele.click()
 
 
-        for d in soup.findAll('a', {'class': {'DY5T1d'}}):
+        # for d in soup.findAll('a', {'class': {'DY5T1d'}}):
             #name = d.find('h3', attrs={
                 #'class': 'truncate-lines-2 all-b-padding-half pwa-theme--grey-900 uitk-type-heading-500'})
             #if name is not None:
                 #n = name.text
-            names.append(d)
+            # names.append(d)
+        for img in soup.select('a[href] img'):
+            link = img.find_parent('a', href=True)
+            if "articles" in str(link):
+                names.append(link)
         return names
 
 
@@ -874,7 +855,7 @@ def write_to_csv(names):
 
 # main function
 def operation():
-    old_file = 'C:\\Users\\Leon\\pycharmprojects\\NLP\\links.txt'
+    old_file = 'D:\\CSsourcecodes\\NLP-news-summary\\links.txt'
     if os.path.isfile(old_file):
         os.remove(old_file)
 
@@ -887,6 +868,7 @@ def operation():
        expedia_bot = ExpediaBot()
        i = expedia_bot.login()
     names=expedia_bot.searchLinks()
+    print(names)
     write_to_csv(names)
 
     try:
@@ -924,8 +906,8 @@ if __name__ == '__main__':
     msg = "Here is your news update."
     #schedule.every().day.at("17:30").do(operation)
 
-    send_email()
-
+    # send_email()
+    operation()
 
     while(1):
         schedule.run_pending()

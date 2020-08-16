@@ -1,0 +1,5 @@
+schedule==0.6.0
+selenium==3.141.0
+webdriver-manager==3.2.1
+shadow-useragent==0.0.17
+celery==4.4.7

@@ -454,3 +454,137 @@ JavaScript error: https://nexus.ensighten.com/aljazeera/ajprod/code/1d41b08d499d
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1597271412356	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofileZ6WEG9"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597271415664	Marionette	INFO	Listening on port 62657
+1597271415986	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt_v3l/202008071612/wrap.js, line 8: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt_v3l/202008071612/wrap.js, line 8: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt_v3l/202008071612/wrap.js, line 8: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt_v3l/202008071612/wrap.js, line 8: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt_v3l/202008071612/wrap.js, line 8: unreachable code after return statement
+JavaScript error: https://news.google.com/swg/js/v1/swg.js, line 173: Error: No config could be discovered in the page
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt_v3l/202008071612/wrap.js, line 8: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt_v3l/202008071612/wrap.js, line 8: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt_v3l/202008071612/wrap.js, line 8: unreachable code after return statement
+JavaScript error: https://polyfill.io/v3/polyfill.min.js?features=Array.isArray%2CArray.prototype.%40%40iterator%2CArray.prototype.entries%2CArray.prototype.every%2CArray.prototype.filter%2CArray.prototype.forEach%2CArray.prototype.includes%2CArray.prototype.indexOf%2CArray.prototype.lastIndexOf%2CArray.prototype.keys%2CArray.prototype.map%2CArray.prototype.reduce%2CArray.prototype.reduceRight%2CArray.prototype.some%2CArray.prototype.values%2CDate.now%2CDate.prototype.toISOString%2CFunction.prototype.bind%2CFunction.prototype.name%2CMath.acosh%2CMath.atanh%2CMath.asinh%2CMath.cbrt%2CMath.clz32%2CMath.cosh%2CMath.expm1%2CMath.fround%2CMath.hypot%2CMath.imul%2CMath.log10%2CMath.log1p%2CMath.log2%2CMath.sign%2CMath.sinh%2CMath.tanh%2CMath.trunc%2CNumber.parseFloat%2CNumber.parseInt%2CObject.values%2CObject.create%2CObject.defineProperties%2CObject.defineProperty%2CObject.freeze%2CObject.getOwnPropertyDescriptor%2CObject.getOwnPropertyNames%2CObject.getPrototypeOf%2CObject.is%2CObject.keys%2CObject.seal%2CObject.setPrototypeOf%2CRegExp.prototype.flags%2CString.prototype.%40%40iterator%2CSymbol.hasInstance%2CSymbol.isConcatSpreadable%2CSymbol.iterator%2CSymbol.match%2CSymbol.replace%2CSymbol.search%2CSymbol.species%2CSymbol.split%2CSymbol.toPrimitive%2CSymbol.toStringTag%2CSymbol.unscopables, line 3: TypeError: can't redefine non-configurable property "replace"
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt/202008071611/wrap.js, line 19: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt/202008071611/wrap.js, line 19: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt/202008071611/wrap.js, line 19: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt/202008071611/wrap.js, line 19: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt/202008071611/wrap.js, line 19: unreachable code after return statement
+JavaScript error: https://atoms.usatoday.com/atoms-library/prod/dist/gannett-atoms-library.js, line 3: TypeError: e.setup.analytics[n] is not a function
+JavaScript error: https://static.foxnews.com/static/isa/core-app.js?v=v74, line 4: Error: Error loading script: //player.h-cdn.com/loader.js?customer=foxnews
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt/202008071611/wrap.js, line 19: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt/202008071611/wrap.js, line 19: unreachable code after return statement
+JavaScript warning: https://confiant-integrations.global.ssl.fastly.net/gpt/202008071611/wrap.js, line 19: unreachable code after return statement
+JavaScript error: https://static.foxnews.com/static/isa/core-app.js?v=v74, line 4: Error: Error loading script: //player.h-cdn.com/loader.js?customer=foxnews
+JavaScript error: https://static-cdn.spot.im/production/broadcast/tags/v1.0.1/broadcast-fetcher-bundle.js, line 1: TypeError: a.push is undefined
+1597278821302	Marionette	INFO	Stopped listening on port 62657
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1597358122621	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofileH3tATV"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597358127264	Marionette	INFO	Listening on port 64898
+1597358127341	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1597358978994	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofile1622S1"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597358982520	Marionette	INFO	Listening on port 49155
+1597358982616	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1597359050684	Marionette	INFO	Stopped listening on port 49155
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597359046691	Marionette	INFO	Listening on port 49260
+1597359046731	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597359117509	Marionette	INFO	Stopped listening on port 49260
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1597359489339	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofileiJasle"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597359493078	Marionette	INFO	Listening on port 49585
+1597359493475	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1597360282066	Marionette	INFO	Stopped listening on port 49585
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1597360299531	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofileH4bKwf"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597360302761	Marionette	INFO	Listening on port 50926
+1597360303182	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1597364501941	Marionette	INFO	Stopped listening on port 50926
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofileLj5Azt"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597364502557	Marionette	INFO	Listening on port 53501
+1597364502791	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1597364635612	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofilexMI7bZ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597364638332	Marionette	INFO	Listening on port 53657
+1597364638736	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1597364671174	Marionette	INFO	Stopped listening on port 53657
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1597364765521	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofileAA5InC"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597364768703	Marionette	INFO	Listening on port 53803
+1597364769152	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1597364941723	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofilecQwfmI"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597364944762	Marionette	INFO	Listening on port 54000
+1597364944837	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1597365063099	Marionette	INFO	Stopped listening on port 54000
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1597382698997	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Haoxiang\\AppData\\Local\\Temp\\rust_mozprofile6J5wYo"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597382705062	Marionette	INFO	Listening on port 57790
+1597382705225	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597382849907	Marionette	INFO	Stopped listening on port 57790
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
